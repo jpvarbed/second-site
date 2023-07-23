@@ -69,7 +69,6 @@ model VerificationToken {
 model Post {
   id        String @id @default(cuid())
   title     String
-  body      String
   permalink String @unique 
   Comment   Comment []
 }

@@ -27,7 +27,7 @@ export function getFileByName(fullPath: string) {
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = slug.endsWith(".md") ? slug.replace(/\.md$/, "") : slug;
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const { data, content } = getFileByName(fullPath);
 
@@ -55,6 +55,9 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
+/**
+ * Get all posts ordered by date descending
+ */
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   const posts = slugs

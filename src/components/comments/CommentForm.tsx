@@ -39,13 +39,13 @@ function CommentForm({ parentId }: { parentId?: string }) {
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Textarea
           required
-          placeholder="Your spicey comment"
+          placeholder="Your comment"
           label="Comment"
           {...form.getInputProps("body")}
         />
 
         <Group position="right" mt="md">
-          <Button loading={isLoading} type="submit">
+          <Button type="submit">
             {parentId ? "Post reply" : "Post comment"}
           </Button>
         </Group>

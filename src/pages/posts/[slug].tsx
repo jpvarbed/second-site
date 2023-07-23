@@ -47,9 +47,9 @@ export default function Post({ post, morePosts, preview }: Props) {
               />
               <PostBody content={post.content} />
             </article>
+            <CommentSection />
           </>
         )}
-        <CommentSection />
       </Container>
     </Layout>
   );

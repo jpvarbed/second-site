@@ -6,7 +6,7 @@ import {
   type DefaultSession,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-import { env } from "~/env.mjs";
+import { env } from "~/env.js";
 import { prisma } from "~/server/db";
 
 /**
