@@ -1,4 +1,12 @@
-import { Avatar, Box, Button, Group, Paper, Text } from "@mantine/core";
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  Group,
+  Paper,
+  Text,
+} from "@mantine/core";
 import { useState } from "react";
 import { CommentWithChildren } from "../../utils/trpc";
 import CommentForm from "./CommentForm";
@@ -29,7 +37,12 @@ function CommentActions({
     <>
       <Group position="apart" mt="md">
         <Text>{getReplyCountText(replyCount)}</Text>
-        <Button onClick={() => setReplying(!replying)}>Reply</Button>
+        <Button
+          style={{ display: "block", backgroundColor: "blue" }}
+          onClick={() => setReplying(!replying)}
+        >
+          Reply
+        </Button>
       </Group>
 
       {replying && <CommentForm parentId={commentId} />}
@@ -38,6 +51,13 @@ function CommentActions({
 }
 
 function Comment({ comment }: { comment: CommentWithChildren }) {
+  // need to change type for comment
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+  const username = comment.user.name;
+  const formattedCreatedAt = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "full",
+    timeStyle: "full",
+  }).format(comment.createdAt);
   return (
     <Paper withBorder radius="md" mb="md" p="md">
       <Box
@@ -55,17 +75,17 @@ function Comment({ comment }: { comment: CommentWithChildren }) {
           })}
         >
           <Group>
-            <Text>{comment.userId}</Text>
-            <Text>{comment.createdAt.toISOString()}</Text>
+            <Text>{username}</Text>
+            <Text>{formattedCreatedAt}</Text>
           </Group>
-
+          <Divider />
           {comment.body}
         </Box>
       </Box>
 
       <CommentActions
         commentId={comment.id}
-        replyCount={comment.children.length}
+        replyCount={comment.children?.length ?? 0}
       />
 
       {comment.children && comment.children.length > 0 && (

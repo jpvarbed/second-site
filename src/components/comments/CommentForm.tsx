@@ -2,12 +2,12 @@ import { Box, Button, Group, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
+import { Login } from "../login";
 
 function CommentForm({ parentId }: { parentId?: string }) {
   const router = useRouter();
 
-  const permalink = router.query.permalink as string;
-
+  const permalink = router.query.slug as string;
   const form = useForm({
     initialValues: {
       body: "",
@@ -45,7 +45,12 @@ function CommentForm({ parentId }: { parentId?: string }) {
         />
 
         <Group position="right" mt="md">
-          <Button type="submit">
+          <Login />
+          <Button
+            type="submit"
+            tw="rounded-full"
+            style={{ display: "block", backgroundColor: "blue" }}
+          >
             {parentId ? "Post reply" : "Post comment"}
           </Button>
         </Group>

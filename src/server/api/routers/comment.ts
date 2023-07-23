@@ -19,6 +19,9 @@ export const commentRouter = createTRPCRouter({
               permalink,
             },
           },
+          include: {
+            user: true,
+          },
         });
 
         return comments;

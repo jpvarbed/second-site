@@ -16,7 +16,6 @@ async function main() {
   const posts = getAllPosts(["slug"]);
 
   posts.map(async (slug) => {
-    console.log(slug);
     const post = getPostBySlug(slug.slug ?? "", [
       "title",
       "date",

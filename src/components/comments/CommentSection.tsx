@@ -1,16 +1,15 @@
 import { Box } from "@mantine/core";
-import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
 import CommentForm from "./CommentForm";
 import ListComments from "./ListComments";
 import formatComments from "../../helpers/formatComments";
 
-function CommentSection() {
-  const router = useRouter();
+type Props = {
+  slug: string;
+};
 
-  const permalink = router.query.permalink as string;
-
-  const data = trpc.comment.all_comments.useQuery({ permalink }).data;
+function CommentSection({ slug }: Props) {
+  const data = trpc.comment.all_comments.useQuery({ permalink: slug }).data;
 
   return (
     <Box>
