@@ -1,0 +1,93 @@
+﻿---
+layout: "@/layouts/post.astro"
+title: The Big Ten Championship 2022
+excerpt: Recap of the Big Ten Championship
+date: "2022-12-04T07:13:00Z"
+coverImage: "/assets/images/michigan.webp"
+imgThumbnail: "/assets/images/michigan_thumbnail.webp"
+imgAlt: "Image post"
+audience: "Personal"
+type: "Recap"
+subject: "Football"
+author:
+  name: "Jason Varbedian"
+---
+
+**Watching Location** Pelicana Seattle
+
+## TOC
+
+## Pregame
+
+Michigan vs Purdue for the big ten title game in Indianapolis. It's been hosted there every year since it's inception in 2011. It's not a bad town to watch a game. It's a little chilly but it's very walkable and there's a ton of good bars. We went to the famous st elmo's steakhouse and got their shrimp cocktail with their homemade cocktail sauce. They shred over 1000lbs of horseradish everyday to make this sauce. It is on the borderline of unpleasant and spicy. It's the kind of steakhouse where the waiters all wear white coats, there's a different person that brings each type of food and every item is good to pretty good. The cost is a little much but it's an experience. I went with my family, Sofia and Sean last year.
+
+## First Half
+
+Onto the game. Purdue has an excellent passing offense. Their qb, top RB and top wr are all walk ons. The brother of the qb also died last week so the qb had the choice of sitting out, playing poorly, or playing to respect his brother in 100% focus mode. Everyone was very supportive of him. I saw many michigan fans show support and keeping him in their thoughts. We thought purdue was a likeable team that michigan was going to have to dismantle. Aidan O Connell (AOC) was in full mecha mode. They have a wr Charlie jones aka chuck sizzle (transfer from Iowa. This is extra ironic given Iowa will finish with the worst offensive yards per game since 1989 in the big ten) and Mockobee is the walk on rb freshman. Chuck leads the big ten in receptions, yards, and receiving touchdowns, AOC leads the big ten in passing. This is a team that can move the ball well through patented Jeff Brohm bullshit. Before this game they were 4-1 vs top 5 teams in Jeff brohms tenure when unranked which is a ridiculous record. There should be an asterisk here that 2 of those teams were Iowa and one was last year's michigan state which as we know now was just an extremely lucky team with the best rb the big ten has had since Saquon. They call unranked Purdue vs Michigan the spoilermakers (play on their Boilermakers). It's such a well known phenomenon that michigan fans were arguing for purdue to be ranked while purdue fans were arguing against it in the reddit/cfb posts about the AP and coaches poll.
+
+The scouting report from this game was that Purdue's defense is just a well coached group of non-super athletes who stay in cover-2 (basic defense with 2 safeties that gives you a good hybrid between passing and running) but no nfl players. This is after years of purdue having an inexplicable first round DE (Kerrigan, Karlaftis, Russel, Cliff Avril). They held iowa to 3 points (iowa has had 6 games of less than 10 points), nearly beat Penn state, and held Illinois running game to under 100 yards. Illinois has a very similar running game scheme to Michigan. Power, down G, some pin and pull. They have chase brown who is probably 80% of a corum but their offensive lineman aren't as strong off the ball and don't make the same in play adjustments that Olu and Zinter do (the easiest way to stop a strong o-line is to have your d-line man gap switch so that an olineman will follow that player out of their gap or block no one. A lb will come in for that gap. This was what osu tried in the second half and partially how those two long td runs happened).
+
+Dan, Alek and I went to a bar in capital hill to watch. I heard of this korean fried chicken place, Pelicana, from of my coworkers. The location is semi cursed as it's the third bar at that location in 8 years. It had soju, good umami cheese fries, and pretty good gochujang chicken with sesame seeds. The would also put dry ice in the beer pitchers so it looked like it was smoking. The downside was there was only 2 employees for about 50 people, they were playing high energy house music during football which put me in a crazy head space during some of the closer parts of the game, and the seats were stools so no backs. I need a backed chair to really enjoy the experience.
+
+Michigan won the toss and elects to defer. This is a smart move because michigan has scored a td on each of its opening half drives to begin their absolute and complete destruction of the other team. Purdue gets the ball and goes tfl (tackle for loss), run for no gain, sack, punt. I have already drank 3 shots of soju, eaten 3 pieces of still way too hot to eat fried chicken and the blow out feels inevitable. The music is at maybe 160 beats per minute and it feels like I'm watching the game from the future in a cyberpunk bar.
+
+Michigan gets the ball back at their 45 and goes 2 edwards runs for no yards. It's not clear at the moment why it's happening. From my perspective purdue has 6 or.7 in the box and isn't immediately choosing run. Michigan fucks up a zone read so the end just eats the rb on the second edge. Mccarthy does a little scramble and hits CJ for a nice first. McCarthy's scrambles will be the difference in this game and it feels like michigan has found a qb who can win games while also playing within the system (devin gardner was probably the last and he would have been amazing if he had some good blockers. Rip his ribs). We get a missed connection pass on 1st, a 4 yard run and then a bell-mccarthy connection for 16 yards that starts to feel pretty rare in retrospect. I think bell is always on option routes or is working with jj while he is directing traffic (scramble broken play drill) and the connection is not there. I think JJ needs some practice but I also think bell is a little set in his ways especially after not working with any qb who could move and throw a dart like jj over his 6 year career. 1st and 10 from Purdue's 25. Alek has just arrived to the bar. I'm worried about michigan in the redzone. We haven't run the ball well (it's only been 3 run plays and 3 minutes) and I'm worried about an OSU hangover. Did Michigan use all their good plays and maybe they are just scouted out now? Michigan runs a play action and no one looks open at first. JJ does a 4 step drop back and lets it rip. Normally when JJ throws this quickly it means his first read is open and it's all good. Camera pans to a double covered TE. Mr Idaho himself Loveland. He Moss's (Randy Moss caught so many td's over dbs who may as well not have been there it's called Mossing when you go up and get it) two cbs. This kid is going to be a problem. I try to explain to dan and alek and that for the previous 3 years harbaugh's son Jay harbaugh was the te coach and he found these guys. Schoonmaker, loveland and erick all (pre season all american who got hurt in game 1). He seems to be a competent coaches son which is very different from the Iowa OC brian ferentz son of longest tenured coach in football Kirk ferentz.
+
+Michigan up 7-0 in what is almost the perfect starting drives opponent 3 & out and medium length td drive.
+
+Purdue takes the kick off to the 18, takes a block in the back penalty and starts 1st & 10 from their 8. It's early but already thinking this might get out of hand. AOC goes full mecha godzilla on this drive going 9/9 for on clean, fast reads. The only negative plays are 2 bad meshes where the freshman rb doesn't cleanly let the qb make the read. Michigan's safety motten is repeatedly in the wrong place and misunderstands where he should be in the zone. Charlie Jones gets 3 catches in a row. He is a tall cooper kupp. It reminds me of michigan's 2013 bowl game against kansas state when Lockett went for 20 catches 200 yards and it was just clockwork. This drive ends up in a td but there are 3 reviews on this drive after there were 2 on michigan's scoring drive. It takes 50 minutes for 9 minutes of clock time in the first corner and I feel like I'm fully at the club after finishing my soju, the lights are dimmed and the music volume raised. I'm questioning this bar being described as a sports bar but it's also not bad? I may come back for the playoffs.
+
+Michigan gets the ball back and JJ makes a bizarre decision on first down. He scrambles and after running 1-2 yards he throws to the td who drops it. It's flagged 5 yards for an illegal forward throw. JJ likely should have kept and would have gotten 6 or 7. Instead it's 2&14 and edwards gets stuffed for 1. On third Bell beats the safety over the top on a cross corner route. The ball hits his hands and he can't pull it in. Dan thinks it's a little high but I think that bell could have jumped. This wasn't a case of him being totally open so an under thrown lob would work. The safety is in sync with bell 1 yard behind so this has to be placed. I wonder if these two will ever be in sync. Brad robbins kicks a bit of a stinker of a 39 yard punt to the purdue 40.
+
+Purdue tries an CJ end around and gets stuffed. AOC turns back into mecha AOC with just 1 incompletion on this drive. Between Mockobee averaging 5 ypc and Jones getting 10-15 yards a zone reception purdue moves the ball well. It's definitely harder this drive as AOC is almost sacked several times. The drive stalls in the redzone after another missed mesh read handoff. Purdue recovers the ball for the 3rd time it hits the turf. They are getting pretty lucky with the turnover luck. Purdue takes the fg 10-7 Purdue and michigan is down which has not happened often this season.
+
+Dan chides me for saying this will be a blowout. I say that I think this is as bad as it will get. Purdue has used their scripted drive and Chuck Sizzle is finding ways to be covered by the dbs and safeties. Once we get our cbs on him the ball will be a lot harder to move. Brohm is calling a hell of a game though who gets Michigan on basically the same fake punt call that osu seemed to set up last week. Jay harbaugh needs to get his ass into gear. He should have cleaned this up after being caught last week.
+
+Michigans second td drive is a good mix of run and pass. Edwards averages 4 ypc as the zone read is effective. Long passes to Schoonmaker & Bell keep the offense moving. While scrambling JJ throws a bomb to a streaking single covered edwards in the corner of the endzone. It's on his outside shoulder and he looks to his inside. I think he comes down with it if he doesn’t have a giant cast on his right hand still. Michigan gets 1&10 from the 13 and gets 3 good edwards runs. 3rd & 4 JJ has a bootleg right and finds Schoonmaker in the endzone. That’s 2 tds for the Te's and most of the receiving yards. Michigan keeps the lead the rest of the game and at this point I expected that to happen. Michigan is moving the ball at will without having to execute perfectly while Purdue is getting pin point passing while being a hand away from sacks and fumbles.
+
+Purdue puts together another nice drive converting 2 3rd and 1s and a 3rd and 12 with a nice corner route to TJ Sheffield on a long 3rd down. AOC has his first incompletion in 12 throws and misses again after being pressured out of the pocket. DJ Turner also comes down with a pick.
+
+Michigan does the weird want to waste time/maybe will use their timeout drive at end of half and purdue tries some weird stuff as well.
+
+## Half Time
+
+Half time thoughts. We've finished our chicken and drinks and we decide to uber to my place to watch the second half.
+
+Michigan looks good and I fully expect them to score a td on their opening drive, stop a fiesty purdue and then score another td and that will be the end of competitive play. I turn out to be technically correct but it feels like the outcome is in doubt for longer than it actually is. Michigan definitely misses Corum as a short yardage, home run threat and pass catcher. Off handed Edwards still reads the blocking very well and Mullens is doing well as the short yardage back but it's clear he isn't ready for serious pass blocking or a wheel route. Corum had knee surgery this past week to remove some torn cartilage. He may come back for the championship game but it's most likely the case that his career at michigan is done. He would have won the heisman had he played in the osu game given what happene to caleb williams and all the other contenders. I hope he goes to the nfl because of how short rb's careers are. They need to get to that second contract fast so they can get paid. The fan in me hopes he stays but I also want whats best for him. Go get yours. The formula has changed some with NIL money. He would likely make something around $1 million next year but JJ will overshadow him in heisman voting and money.
+
+I am sort of enjoing a closer game that I am pretty confident michigan will win. Illinois and OSU were close but I wasn't as sure in those games. PSU I was pretty sure about. I'm trying to change my mindset to enjoy the journey of these games instead of the results. I'm watching with my friends, I'm talking with a huge community, I'm present in the moment of these games. Michigan won't always be undefeated destroying teams. It's fun just to root for other teams to lose and to argue about who should be ranked where especially because it is all so meaningless. It makes me feel like I'm in school again and maybe that’s the biggest reason why I still prefer cfb?
+
+## Second Half
+
+Michigan gets the touchback and 1st and 10 at the 25. Safely at home I expect michigan to kick purdue's ass this game. The michigan being a second half team meme is at full force. All of the half time tweets and texts I see and send are about how they expect the second half adjustments to put this game away quick. They turn out to be mostly prescient.
+
+First play of the half, edwards goes between zinter and olu (very likely the best blocked gap in all of college football this year) for 60. he cuts over to the side and gets semi caught by the safety and goes out of bounds at the 15. Michigan gets 2nd &6 at the 7 11 and goes with 2 mullings runs and he gets his first career td. He is running very hard but the blocking is also moving the LOS effectively 2 yards forward even at the goal line. Feels good to manball in a td. I doubt this will work vs Georgia but I think it could vs say TCU.
+
+Purdue gets shut down on their next drive with a quick 3 and out. Michigan gets the ball on their 33.
+
+Michigan gets the ball at their 33 and throws a bomb to a streaking Schoonmaker. It's a great play call and good throw by JJ. The play action everyone has been asking for from michigan all year is finally called. They follow it up by an easy Edwards run for a td. 2 plays and michigan is up 28-13.
+
+The game feels solidly in hand and one more stop and score and michigan maybe thinks about playing some backups since it's the last game of the year they could do that. There's maybe some complications ins that you want to run up the score a little bit but there's no chance the committee will put michigan over a team that beat their asses last year in the playoffs.
+
+On purudes next drive they move the ball quickly to michigans 18 with a long chuck pass and a long mockobee run. Purdue's best players are putting on a show. They are not ready to quit and it's admirable. On the next play, chuck is going for a curl in the endzone but Will Johnson, 5 star true freshman, beats him to the ball and gets his first pick. AOC looks like he can't believe what he sees. He saw a freshman on the best wr in the league and expected a TD. Will Johnson was already successfully covering marvin harrison last game (probably the most talented wr in the league) and he is going to go in the first round himself some day.
+
+Dan and I are feeling cocky so we both bet on how many plays it will take for michigan to score their next td (even starting from the 1). I guess 4 and he guesses 8. Michigan goes for 3 runs and has to punt from 4th and 1. Kalel can't pick up 2 from 3rd and 2. It really feels like micigan has to start picking those up again to win a national championship. They will probably beat anyone but georgia but if they cant get a 3rd and 2 against purdue it is a little bit of a bad sign.
+
+Purdue gets fg doing the same old same old after converting 3 3rd downs. Kicking a field goal to make it 28-19 doesn't make a lot of sense since you are still down 2 scores but brohm must be counting on some defensive stops. It's hard to predict the future but this 4th and 6 conversion is probably better odds then stopping and scoring twice with only 12 minutes left in the 4th.
+
+On michigan's next drive, we get a long run and then some stuffed edwards runs. On 3rd and 7 jj scrambles and runs for it. It looks doomed from the jump and I think we'll see that someone was open who he missed. He leaps for it and thinks he got it but he jumps with his foot standing out. It's not his fault the 2 previous runs got stuffed but maybe there was a better option to convert.
+
+Two plays later, johnson picks off AOC on a slant on the purdue 16.
+
+Three plays later McCarthy throws a perfect seam pass to bell after really poorly under throwing a ball to bell two plays earlier. M 36-19
+
+Purdue again punts after using way too much clock on runs M 36-22. Michigan is up 14. This fg is a little more defensible as it's 3 vs 2 score difference.
+
+On michigan's last drive, they go for 8 straight runs into the td which some mullings and edwards mixed. It seems stokes and gash have been completely jumped. Stokes was not reading the lanes against OSU and did not get any run tonight.
+
+## Post Game
+
+Michigan is back to back big ten champs. Some news articles also falsey claim 2 undefeated regular seasons in a row which slights the spartans. In their defense it still kind of felt like michigan won that game given the number of 4th& 15s they converted.
+
+Michigan looks like the second best team in the country. JJ makes it so at any time michigan can hit a homerun but they're running game has gone from elite to above average. Michigan's pass coverage has also become elite. When the qb throws the ball it's not 100% going to be a catch (unless its to chuck sizzle). Georgia has some excellent te's that will make it hard for some of our best dbs to play effective coverage. They will just out size them similar to how Loveland moss'd those two dbs.  
+If michigan can get a full operational edwards and mullens I think they can get back to a high running success rate (success rate is when you are in a good down and distance)
