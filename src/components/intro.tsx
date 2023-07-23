@@ -1,5 +1,3 @@
-import { CMS_NAME } from "../utils/constants";
-
 const Intro = () => {
   return (
     <section className="mb-16 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between">
@@ -7,14 +5,7 @@ const Intro = () => {
         Blog.
       </h1>
       <h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
-        A statically generated blog example using{" "}
-        <a
-          href="https://nextjs.org/"
-          className="underline transition-colors duration-200 hover:text-blue-600"
-        >
-          Next.js
-        </a>{" "}
-        and {CMS_NAME}.
+        Jason Varbedian
       </h4>
     </section>
   );

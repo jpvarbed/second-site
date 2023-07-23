@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../components/container";
-import PostBody from "../components/post-body";
-import Header from "../components/header";
-import PostHeader from "../components/post-header";
-import Layout from "../components/layout";
-import { getPostBySlug, getAllPosts } from "../utils/api";
-import PostTitle from "../components/post-title";
+import Container from "../../components/container";
+import PostBody from "../../components/post-body";
+import Header from "../../components/header";
+import PostHeader from "../../components/post-header";
+import Layout from "../../components/layout";
+import { getPostBySlug, getAllPosts } from "../../utils/api";
+import PostTitle from "../../components/post-title";
 import Head from "next/head";
-import { CMS_NAME } from "../utils/constants";
-import markdownToHtml from "../utils/markdownToHtml";
-import type PostType from "../interfaces/post";
+import { CMS_NAME } from "../../utils/constants";
+import markdownToHtml from "../../utils/markdownToHtml";
+import type PostType from "../../interfaces/post";
 
 type Props = {
   post: PostType;
