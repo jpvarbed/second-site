@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Intro = () => {
   return (
     <section className="mb-16 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between">
@@ -5,7 +7,7 @@ const Intro = () => {
         Blog.
       </h1>
       <h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
-        Jason Varbedian
+        <Link href="./aboutme">Jason Varbedian</Link>
       </h4>
     </section>
   );
