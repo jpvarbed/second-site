@@ -1,11 +1,13 @@
-// src/utils/trpc.ts
+import { inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "../server/api/root";
 import { createTRPCReact } from "@trpc/react-query";
 
 export const trpc = createTRPCReact<AppRouter>();
-import type { Comment } from "@prisma/client";
-export const commentQuery = trpc.comment.all_comments;
-
-export type CommentWithChildren = Comment & {
+type RouterOutput = inferRouterOutputs<AppRouter>;
+/**
+ * Comments returned by all_comments query
+ */
+export type CommentQuery = RouterOutput["comment"]["all_comments"][number];
+export type CommentWithChildren = CommentQuery & {
   children: CommentWithChildren[];
 };

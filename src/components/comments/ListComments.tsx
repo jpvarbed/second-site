@@ -51,8 +51,6 @@ function CommentActions({
 }
 
 function Comment({ comment }: { comment: CommentWithChildren }) {
-  // need to change type for comment
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
   const username = comment.user.name;
   const formattedCreatedAt = new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",

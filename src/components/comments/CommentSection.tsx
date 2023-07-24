@@ -3,6 +3,7 @@ import { trpc } from "../../utils/trpc";
 import CommentForm from "./CommentForm";
 import ListComments from "./ListComments";
 import formatComments from "../../helpers/formatComments";
+import { useMemo } from "react";
 
 type Props = {
   slug: string;
@@ -10,11 +11,14 @@ type Props = {
 
 function CommentSection({ slug }: Props) {
   const data = trpc.comment.all_comments.useQuery({ permalink: slug }).data;
-
+  const formattedComments = useMemo(() => {
+    console.log("called useMemo");
+    return formatComments(data ?? []);
+  }, [data]);
   return (
     <Box>
       <CommentForm />
-      {data && <ListComments comments={formatComments(data ?? [])} />}
+      {formattedComments && <ListComments comments={formattedComments} />}
     </Box>
   );
 }
