@@ -90,7 +90,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
                 if (obsidianImage) {
                     const parts = obsidianImage.split('|');
-                    imagePath = parts[0].trim();
+                    imagePath = parts[0]?.trim() || '';
                     alt = parts[1]?.trim() || imagePath;
                 } else if (mdPath) {
                     imagePath = mdPath;
