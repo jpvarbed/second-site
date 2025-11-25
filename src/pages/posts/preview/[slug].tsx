@@ -77,9 +77,50 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         const fileContent = fs.readFileSync(draftsPath, 'utf8');
         const { data, content } = matter(fileContent);
 
+        // Get the source note path from frontmatter if available
+        const sourceNotePath = data.sourceNotePath || '';
+        const noteDir = sourceNotePath ? sourceNotePath.substring(0, sourceNotePath.lastIndexOf('/')) : '';
+
+        // Process content to replace image paths with API URLs
+        const processedContent = content.replace(
+            /!\[\[([^\]]+)\]\]|!\[([^\]]*)\]\(([^)]+)\)/g,
+            (match: string, obsidianImage: string | undefined, mdAlt: string | undefined, mdPath: string | undefined) => {
+                let imagePath: string;
+                let alt: string;
+
+                if (obsidianImage) {
+                    const parts = obsidianImage.split('|');
+                    imagePath = parts[0].trim();
+                    alt = parts[1]?.trim() || imagePath;
+                } else if (mdPath) {
+                    imagePath = mdPath;
+                    alt = mdAlt || '';
+                } else {
+                    return match;
+                }
+
+                // If it's already an http URL, keep it
+                if (imagePath.startsWith('http')) {
+                    return `![${alt}](${imagePath})`;
+                }
+
+                // Resolve full path
+                let fullPath: string;
+                if (imagePath.startsWith('/')) {
+                    fullPath = imagePath;
+                } else if (noteDir) {
+                    fullPath = `${noteDir}/${imagePath}`;
+                } else {
+                    fullPath = imagePath;
+                }
+
+                return `![${alt}](/api/studio/image?path=${encodeURIComponent(fullPath)})`;
+            }
+        );
+
         return {
             props: {
-                content,
+                content: processedContent,
                 frontmatter: data,
             }
         };

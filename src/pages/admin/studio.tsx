@@ -120,7 +120,8 @@ export default function WritingStudio() {
                         ...frontmatter,
                         layout: '@/layouts/post.astro',
                         date: frontmatter.date || new Date().toISOString(),
-                        author: { name: 'Jason Varbedian' }
+                        author: { name: 'Jason Varbedian' },
+                        sourceNotePath: selectedFile  // Store source path for preview
                     },
                     filename
                 })
