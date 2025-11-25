@@ -4,13 +4,18 @@ import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <MantineProvider>
+        <Component {...pageProps} />
+      </MantineProvider>
     </SessionProvider>
   );
 };

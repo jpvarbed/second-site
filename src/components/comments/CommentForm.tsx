@@ -44,7 +44,7 @@ function CommentForm({ parentId }: { parentId?: string }) {
           {...form.getInputProps("body")}
         />
 
-        <Group position="right" mt="md">
+        <Group justify="flex-end" mt="md">
           <Login />
           <Button
             type="submit"

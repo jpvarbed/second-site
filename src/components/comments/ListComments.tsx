@@ -35,7 +35,7 @@ function CommentActions({
 
   return (
     <>
-      <Group position="apart" mt="md">
+      <Group justify="space-between" mt="md">
         <Text>{getReplyCountText(replyCount)}</Text>
         <Button
           style={{ display: "block", backgroundColor: "blue" }}
@@ -59,18 +59,18 @@ function Comment({ comment }: { comment: CommentWithChildren }) {
   return (
     <Paper withBorder radius="md" mb="md" p="md">
       <Box
-        sx={() => ({
+        style={{
           display: "flex",
-        })}
+        }}
       >
         <Avatar />
 
         <Box
           pl="md"
-          sx={() => ({
+          style={{
             display: "flex",
             flexDirection: "column",
-          })}
+          }}
         >
           <Group>
             <Text>{username}</Text>
