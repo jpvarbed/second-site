@@ -11,6 +11,8 @@ export default function WritingStudio() {
     const [chatHistory, setChatHistory] = useState<any[]>([]);
     const [userMessage, setUserMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [saveStatus, setSaveStatus] = useState<'saved' | 'saving' | 'unsaved'>('saved');
+    const [isDraft, setIsDraft] = useState(true);
 
     // Load files from directory
     const loadFiles = async () => {
@@ -90,14 +92,26 @@ export default function WritingStudio() {
         }
     };
 
-    // Save post
-    const savePost = async () => {
+    // Auto-save to drafts
+    useEffect(() => {
+        if (!selectedFile || !content) return;
+
+        const timer = setTimeout(async () => {
+            await saveDraft();
+        }, 30000); // 30 seconds
+
+        return () => clearTimeout(timer);
+    }, [content, frontmatter]);
+
+    // Save as draft
+    const saveDraft = async () => {
         if (!selectedFile) return;
 
         const filename = selectedFile.split('/').pop()?.replace('.md', '') || 'untitled';
+        setSaveStatus('saving');
 
         try {
-            const res = await fetch('/api/studio/save', {
+            const res = await fetch('/api/studio/autosave', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -114,28 +128,109 @@ export default function WritingStudio() {
 
             const data = await res.json();
             if (data.success) {
-                alert('Post saved successfully!');
+                setSaveStatus('saved');
+                setIsDraft(true);
             }
         } catch (error) {
-            console.error('Error saving post:', error);
-            alert('Error saving post');
+            console.error('Error saving draft:', error);
+            setSaveStatus('unsaved');
         }
+    };
+
+    // Publish post
+    const publishPost = async () => {
+        if (!selectedFile) return;
+
+        const filename = selectedFile.split('/').pop()?.replace('.md', '') || 'untitled';
+        setSaveStatus('saving');
+
+        try {
+            const res = await fetch('/api/studio/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content,
+                    frontmatter: {
+                        ...frontmatter,
+                        layout: '@/layouts/post.astro',
+                        date: frontmatter.date || new Date().toISOString(),
+                        author: { name: 'Jason Varbedian' }
+                    },
+                    filename,
+                    isDraft: false,
+                    sourceNotePath: selectedFile
+                })
+            });
+
+            const data = await res.json();
+            if (data.success) {
+                setSaveStatus('saved');
+                setIsDraft(false);
+                const imageCount = data.copiedImages?.length || 0;
+                alert(`Post published successfully!${imageCount > 0 ? ` ${imageCount} image(s) copied.` : ''}`);
+            }
+        } catch (error) {
+            console.error('Error publishing post:', error);
+            alert('Error publishing post');
+            setSaveStatus('unsaved');
+        }
+    };
+
+    // Preview post
+    const previewPost = () => {
+        if (!selectedFile) return;
+        const slug = selectedFile.split('/').pop()?.replace('.md', '') || 'untitled';
+        window.open(`/posts/preview/${slug}`, '_blank');
     };
 
     // Process content to replace image paths with API URLs
     const processedContent = content.replace(
-        /!\[([^\]]*)\]\(([^)]+)\)/g,
-        (match, alt, imagePath) => {
+        // Match both Obsidian ![[image]] and standard markdown ![](image)
+        /!\[\[([^\]]+)\]\]|!\[([^\]]*)\]\(([^)]+)\)/g,
+        (match, obsidianImage, mdAlt, mdPath) => {
+            let imagePath: string;
+            let alt: string;
+
+            if (obsidianImage) {
+                // Obsidian syntax: ![[image.png]] or ![[image.png|alt text]]
+                const parts = obsidianImage.split('|');
+                imagePath = parts[0].trim();
+                alt = parts[1]?.trim() || imagePath;
+            } else {
+                // Standard markdown: ![alt](path)
+                imagePath = mdPath;
+                alt = mdAlt || '';
+            }
+
             // If it's a local path (not http), serve via our API
             if (!imagePath.startsWith('http')) {
-                const fullPath = imagePath.startsWith('/')
-                    ? imagePath
-                    : `${obsidianPath}/${imagePath}`;
+                let fullPath: string;
+
+                // Check if it's an absolute path
+                if (imagePath.startsWith('/')) {
+                    fullPath = imagePath;
+                } else {
+                    // Relative path - resolve relative to the note's directory
+                    const noteDir = selectedFile ? selectedFile.substring(0, selectedFile.lastIndexOf('/')) : obsidianPath;
+                    fullPath = `${noteDir}/${imagePath}`;
+                }
+
                 return `![${alt}](/api/studio/image?path=${encodeURIComponent(fullPath)})`;
             }
             return match;
         }
     );
+
+    // Quick prompt suggestions
+    const quickPrompts = [
+        "Summarize this in 2-3 sentences",
+        "Make the intro more engaging",
+        "Add more examples",
+        "Simplify the language",
+        "Make it more technical",
+        "Add a conclusion",
+        "Fix grammar and spelling"
+    ];
 
     useEffect(() => {
         loadFiles();
@@ -245,23 +340,71 @@ export default function WritingStudio() {
                                 }}
                                 placeholder="Select a file to edit..."
                             />
-                            <button
-                                onClick={savePost}
-                                disabled={!selectedFile}
-                                style={{
-                                    marginTop: '16px',
-                                    padding: '12px',
-                                    background: selectedFile ? '#28a745' : '#ccc',
-                                    color: 'white',
-                                    border: 'none',
-                                    borderRadius: '4px',
-                                    cursor: selectedFile ? 'pointer' : 'not-allowed',
-                                    fontSize: '16px',
-                                    fontWeight: 'bold'
-                                }}
-                            >
-                                Save to Blog
-                            </button>
+
+                            {/* Save Status */}
+                            <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <span style={{ fontSize: '12px', color: '#666' }}>
+                                    {saveStatus === 'saving' && '💾 Saving...'}
+                                    {saveStatus === 'saved' && '✓ Saved'}
+                                    {saveStatus === 'unsaved' && '⚠ Unsaved changes'}
+                                </span>
+                                {isDraft && <span style={{ fontSize: '12px', padding: '2px 8px', background: '#fff3cd', color: '#856404', borderRadius: '4px', fontWeight: 'bold' }}>DRAFT</span>}
+                            </div>
+
+                            {/* Action Buttons */}
+                            <div style={{ marginTop: '16px', display: 'flex', gap: '8px' }}>
+                                <button
+                                    onClick={saveDraft}
+                                    disabled={!selectedFile}
+                                    style={{
+                                        flex: 1,
+                                        padding: '12px',
+                                        background: selectedFile ? '#6c757d' : '#ccc',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        cursor: selectedFile ? 'pointer' : 'not-allowed',
+                                        fontSize: '14px',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    Save Draft
+                                </button>
+                                <button
+                                    onClick={previewPost}
+                                    disabled={!selectedFile}
+                                    style={{
+                                        flex: 1,
+                                        padding: '12px',
+                                        background: selectedFile ? '#007bff' : '#ccc',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        cursor: selectedFile ? 'pointer' : 'not-allowed',
+                                        fontSize: '14px',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    Preview
+                                </button>
+                                <button
+                                    onClick={publishPost}
+                                    disabled={!selectedFile}
+                                    style={{
+                                        flex: 1,
+                                        padding: '12px',
+                                        background: selectedFile ? '#28a745' : '#ccc',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        cursor: selectedFile ? 'pointer' : 'not-allowed',
+                                        fontSize: '14px',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    Publish
+                                </button>
+                            </div>
                         </div>
 
                         {/* Preview */}
@@ -282,6 +425,34 @@ export default function WritingStudio() {
                     </div>
 
                     <div style={{ flex: 1, overflowY: 'auto', padding: '20px' }}>
+                        {/* Quick Prompts */}
+                        {chatHistory.length === 0 && (
+                            <div style={{ marginBottom: '20px' }}>
+                                <p style={{ fontSize: '12px', color: '#666', marginBottom: '10px', fontWeight: 'bold' }}>Quick Prompts:</p>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                    {quickPrompts.map((prompt, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                setUserMessage(prompt);
+                                            }}
+                                            style={{
+                                                padding: '6px 12px',
+                                                background: '#e3f2fd',
+                                                border: '1px solid #90caf9',
+                                                borderRadius: '16px',
+                                                cursor: 'pointer',
+                                                fontSize: '12px',
+                                                color: '#1976d2'
+                                            }}
+                                        >
+                                            {prompt}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
                         {chatHistory.map((msg, idx) => (
                             <div
                                 key={idx}
