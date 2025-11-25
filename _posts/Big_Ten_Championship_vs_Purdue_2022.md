@@ -1,12 +1,8 @@
 ﻿---
-layout: "@/layouts/post.astro"
 title: The Big Ten Championship 2022
 excerpt: Recap of the Big Ten Championship
 date: "2022-12-04T07:13:00Z"
-coverImage: "/assets/images/michigan.webp"
-imgThumbnail: "/assets/images/michigan_thumbnail.webp"
-imgAlt: "Image post"
-audience: "Personal"
+coverImage: "/assets/images/michigan_football.png"
 type: "Recap"
 subject: "Football"
 author:

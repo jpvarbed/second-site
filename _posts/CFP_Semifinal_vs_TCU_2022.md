@@ -3,7 +3,7 @@ layout: "@/layouts/post.astro"
 title: CFP Semi-Finals Michigan vs TCU
 excerpt: Recap of the Semi Finals
 date: "2022-12-23T01:01:00Z"
-coverImage: "/assets/images/michigan.webp"
+coverImage: "/assets/images/michigan_football.png"
 imgThumbnail: "/assets/images/michigan_thumbnail.webp"
 imgAlt: "Image post"
 audience: "Personal"

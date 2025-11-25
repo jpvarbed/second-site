@@ -1,11 +1,8 @@
 ---
-layout: "@/layouts/post.astro"
 title: Fundamentals of Data Engineering
 excerpt: Data Engineering and Systems
 date: "2023-07-17T12:23:00Z"
 coverImage: "/assets/images/books/fundamentals_of_data_engineering/cover.jpeg"
-imgAlt: "Image post"
-audience: "Professional"
 type: "Review"
 subject: "Book"
 author:
@@ -44,7 +41,7 @@ Data engineer gets data, stores it, and prepares it for consumption
 
 ### Data engineering lifecycle
 
-![/assets/images/books/fundamentals_of_data_engineering/DataEngineeringLifecycle.jpeg]
+![Data Engineering Lifecycle](/assets/images/books/fundamentals_of_data_engineering/DataEngineeringLifecycle.jpeg)
 
 Generation -> Storage -> Ingestion -> Transformation -> Serving
 
@@ -85,7 +82,7 @@ Privacy, anonymization, data garbage collection and compliance with regulations
 #### Data Engineering and data science
 
 Data engineering is upstream from data science. Provide the inputs used by data scientists
-![[HierarchyOfDataScienceNeeds.jpeg]
+![Hierarchy of Data Science Needs](/assets/images/books/fundamentals_of_data_engineering/HierarchyOfDataScienceNeeds.jpeg)
 
 70-80% spent toiling in the bottom 3 parts of the hierarchy
 

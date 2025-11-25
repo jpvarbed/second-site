@@ -12,9 +12,12 @@
     "start": "next start",
     "db-seed": "prisma db seed",
     "update-covers": "tsx src/scripts/fetch-book-covers.ts",
-    "new-post": "tsx src/scripts/new-post.ts"
+    "new-post": "tsx src/scripts/new-post.ts",
+    "writing-aid": "tsx src/scripts/writing-aid.ts",
+    "test-gemini": "tsx src/scripts/test-gemini.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@mantine/core": "^8.3.9",
     "@mantine/form": "^8.3.9",
     "@mantine/hooks": "^8.3.9",
@@ -55,6 +58,7 @@
     "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "6.0.0",
     "autoprefixer": "^10.4.22",
+    "dotenv": "^17.2.3",
     "eslint": "^8.40.0",
     "eslint-config-next": "^13.4.2",
     "postcss": "^8.5.6",

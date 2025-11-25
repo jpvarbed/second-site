@@ -12,7 +12,6 @@ import Head from "next/head";
 import { CMS_NAME } from "../../utils/constants";
 import markdownToHtml from "../../utils/markdownToHtml";
 import type PostType from "../../interfaces/post";
-import CommentSection from "~/components/comments/CommentSection";
 
 type Props = {
   post: PostType;
@@ -47,7 +46,6 @@ export default function Post({ post, morePosts, preview }: Props) {
               />
               <PostBody content={post.content} />
             </article>
-            <CommentSection slug={post.slug} />
           </>
         )}
       </Container>

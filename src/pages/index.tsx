@@ -6,7 +6,7 @@ import HeroPost from "~/components/hero-post";
 import Intro from "~/components/intro";
 import MoreStories from "~/components/more-stories";
 import PostType from "~/interfaces/post";
-import { api, getAllPosts } from "~/utils/api";
+import { getAllPosts } from "~/utils/api";
 
 type Props = {
   allPosts: PostType[];
@@ -33,8 +33,8 @@ export default function Home({ allPosts }: Props) {
   return (
     <>
       <Head>
-        <title>Jason Varbedian</title>
-        <meta name="description" content="Jason's Blog" />
+        <title>Jason Varbedian | Software Engineer</title>
+        <meta name="description" content="Technical blog on software engineering, system design, and book reviews" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

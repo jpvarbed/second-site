@@ -18,8 +18,12 @@ async function fetchBookCover(title: string): Promise<string | null> {
         const book = data.items?.[0];
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
         const imageLinks = book?.volumeInfo?.imageLinks;
+
+        if (!imageLinks) return null;
+
+        // Prioritize higher resolution images
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
-        const imageUrl = imageLinks?.thumbnail ?? imageLinks?.smallThumbnail;
+        const imageUrl = imageLinks.extraLarge ?? imageLinks.large ?? imageLinks.medium ?? imageLinks.thumbnail ?? imageLinks.smallThumbnail;
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return imageUrl ?? null;
@@ -61,9 +65,45 @@ async function main() {
 
             if (coverUrl) {
                 const slug = file.replace(/\.md$/, "");
-                const extension = path.extname(new URL(coverUrl).pathname) || ".jpg"; // Default to jpg if no extension
-                // Clean extension
-                const cleanExt = extension.split('&')[0] ?? ".jpg";
+
+                // Determine extension from Content-Type
+                let extension = ".jpg";
+                try {
+                    const imageResponse = await fetch(coverUrl, { method: 'HEAD' });
+                    const contentType = imageResponse.headers.get('content-type');
+
+                    if (contentType) {
+                        switch (contentType) {
+                            case 'image/jpeg':
+                                extension = '.jpg';
+                                break;
+                            case 'image/png':
+                                extension = '.png';
+                                break;
+                            case 'image/gif':
+                                extension = '.gif';
+                                break;
+                            case 'image/webp':
+                                extension = '.webp';
+                                break;
+                            default:
+                                console.warn(`Unknown content type ${contentType} for ${coverUrl}, defaulting to .jpg`);
+                        }
+                    } else {
+                        // Fallback to URL parsing if HEAD fails or no content-type
+                        const urlObj = new URL(coverUrl);
+                        const pathname = urlObj.pathname;
+                        const ext = path.extname(pathname);
+                        if (ext) {
+                            extension = ext;
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`Could not determine content type for ${coverUrl}, defaulting to .jpg`, e);
+                }
+
+                // Clean extension (remove any query params if they somehow got in, though path.extname handles most)
+                const cleanExt = extension.split(/[?#]/)[0] ?? ".jpg";
 
                 const relativePath = `/assets/images/books/${slug}${cleanExt}`;
                 const outputPath = path.join(publicDirectory, "assets", "images", "books", `${slug}${cleanExt}`);

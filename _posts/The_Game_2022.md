@@ -3,7 +3,7 @@ layout: "@/layouts/post.astro"
 title: The Game Michigan at OSU
 excerpt: Recap of the The Game
 date: "2022-11-29T01:01:00Z"
-coverImage: "/assets/images/michigan.webp"
+coverImage: "/assets/images/michigan_football.png"
 imgThumbnail: "/assets/images/michigan_thumbnail.webp"
 imgAlt: "Image post"
 audience: "Personal"
