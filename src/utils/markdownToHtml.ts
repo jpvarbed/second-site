@@ -1,8 +1,11 @@
 import { remark } from "remark";
 import html from "remark-html";
 
+import remarkToc from "remark-toc";
+
 export default async function markdownToHtml(markdown: string) {
   const result = await remark()
+    .use(remarkToc, { heading: "TOC|Table of Contents", tight: true })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
     .use((() => (tree: any) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-explicit-any
