@@ -18,7 +18,9 @@ const CoverImage = ({ title, src, slug }: Props) => {
       })}
       width={1300}
       height={630}
-      style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+      quality={100}
+      sizes="(max-width: 768px) 100vw, 1300px"
+      style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
     />
   )
   return (
